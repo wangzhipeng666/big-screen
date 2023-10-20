@@ -1,17 +1,9 @@
 <script setup>
-import container from './components/Container.vue'
+import Screen from './views/screen/index.vue'
 </script>
 
 <template>
-  <container>
-    <div class="text">111</div>
-  </container>
+  <Screen />
 </template>
 
-<style scoped>
-.text {
-  color: red;
-  font-size: 14px;
-  transform: scale(0.5);
-}
-</style>
+<style scoped></style>
