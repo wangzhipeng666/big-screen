@@ -1,7 +1,9 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 // import { getMapData, getUserData } from '../../api'
 
-export const userData = ref(
+const color = ['rgb(116,166,49)', 'rgb(190,245,99)', 'rgb(202,252,137)', 'rgb(251,253,142)']
+
+const userData = ref(
     {
         "userToday": 1508411,
         "userLastDay": 1000000,
@@ -1153,3 +1155,28 @@ export const userData = ref(
         "growthLastMonth": "88.55"
     }
 )
+const ageData = ref([])
+
+userData.value.age.forEach((item, index) => {
+    if (ageData.value[index]) {
+        ageData.value[index] = {
+            startValue: ageData.value[index].value,
+            value: item.value,
+            axis: item.key,
+            color: color[index]
+        }
+        ageData.value = [...ageData.value]
+    } else {
+        ageData.value.push({
+            startValue: 0,
+            value: item.value,
+            axis: item.key,
+            color: color[index]
+        })
+    }
+})
+
+export {
+    userData,
+    ageData
+}

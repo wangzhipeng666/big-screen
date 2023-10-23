@@ -18,6 +18,13 @@
               ref="totalUser"
             />
           </div>
+          <div class="left2">
+            <average-age
+              :data="ageData"
+              :avg-age="+userData.averageAge || 0"
+              ref="averageAge"
+            />
+          </div>
         </div>
       </div>
     </container>
@@ -30,8 +37,8 @@ import Container from '../../components/container/index.vue'
 import TopHeader from '../../components/TopHeader/index.vue'
 import Separator from '../../components/Separator/index.vue'
 import TotalUser from '../../components/TotalUser/index.vue'
-import { userData } from './useScreenData.js'
-console.log(userData.value)
+import AverageAge from '../../components/AverageAge/index.vue'
+import { userData, ageData } from './useScreenData.js'
 
 const loading = ref(true)
 
