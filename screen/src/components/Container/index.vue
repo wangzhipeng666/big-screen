@@ -62,7 +62,6 @@ const updateScale = () => {
     // 获取大屏最终的宽高
     const realWidth = width.value || originalWidth.value
     const realHeight = height.value || originalHeight.value
-    console.log(currentHeight, realHeight)
     // 宽高压缩比
     const widthScale = currentWidth / realWidth;
     const heightScale = currentHeight / realHeight;
@@ -70,7 +69,6 @@ const updateScale = () => {
 }
 // 监听窗口变化
 const onResize = async (e) => {
-    console.log('e', e)
     await initSize()
     updateScale()
 }
