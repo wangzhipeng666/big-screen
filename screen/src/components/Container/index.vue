@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { debounce } from '../utils/index'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { debounce } from '../../utils/index'
 
 const props = defineProps({
     options: {
