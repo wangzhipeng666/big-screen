@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="loading-text" v-if="loading">数据加载中...</div>
-    <container :options="{width: 3840, height: 2160}" v-else>
+    <container :options="{ width: 3840, height: 2160 }" v-else>
       <div class="header">
         <top-header />
       </div>
@@ -15,12 +15,11 @@
               :today-user="userData.userToday"
               :growth-last-day="+userData.userGrowthLastDay || 0"
               :growth-last-month="+userData.userGrowthLastMonth || 0"
-              ref="totalUser"
             />
           </div>
           <div class="left2">
             <average-age
-              :data="ageData"
+              :age-data="ageData"
               :avg-age="+userData.averageAge || 0"
               ref="averageAge"
             />
@@ -32,20 +31,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Container from '../../components/container/index.vue'
-import TopHeader from '../../components/TopHeader/index.vue'
-import Separator from '../../components/Separator/index.vue'
-import TotalUser from '../../components/TotalUser/index.vue'
-import AverageAge from '../../components/AverageAge/index.vue'
-import { totalUser, averageAge, useScreenData } from './useScreenData.js'
+import { ref } from "vue";
+import Container from "../../components/container/index.vue";
+import TopHeader from "../../components/TopHeader/index.vue";
+import Separator from "../../components/Separator/index.vue";
+import TotalUser from "../../components/TotalUser/index.vue";
+import AverageAge from "../../components/AverageAge/index.vue";
+import { averageAge, useScreenData } from "./useScreenData.js";
 
-const loading = ref(true)
-const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData({once: false})
+const loading = ref(true);
+const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData({ once: true });
 
 setTimeout(() => {
-  loading.value = false
-}, 1000)
+  loading.value = false;
+}, 1000);
 </script>
 
 <style lang="scss" scoped>
@@ -80,7 +79,12 @@ setTimeout(() => {
         box-sizing: border-box;
         background: rgb(60, 61, 64);
 
-        .left1, .left2, .left3, .left4, .left5, .left6 {
+        .left1,
+        .left2,
+        .left3,
+        .left4,
+        .left5,
+        .left6 {
           padding-bottom: 20px;
         }
 

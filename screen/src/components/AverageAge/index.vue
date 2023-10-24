@@ -19,7 +19,7 @@
         </div>
         <div id="average-age-chart" />
         <div class="average-data-wrapper">
-            <div class="average-data" v-for="(item, index) in data" :key="index">
+            <div class="average-data" v-for="(item, index) in ageData" :key="index">
                 <div class="average-data-value">
                 <count-to
                     :startVal="item.startValue"
@@ -42,14 +42,14 @@ import * as echarts from 'echarts'
 
 const color = ['rgb(116,166,49)', 'rgb(190,245,99)', 'rgb(202,252,137)', 'rgb(251,253,142)']
 
-const props = defineProps(['data', 'avgAge'])
+const props = defineProps(['ageData', 'avgAge'])
 let chart
 
 const update = () => {
     const createOption = () => {
         const data = ['年龄分布']
         let max = 0
-        props.data.forEach(item => {
+        props.ageData.forEach(item => {
             data.push(item.value)
             max += item.value
         })
@@ -124,8 +124,10 @@ const update = () => {
     chart.setOption(createOption())
 }
 
+defineExpose({update})
+
 onMounted(() => {
-    update()
+  update()
 })
 </script>
 

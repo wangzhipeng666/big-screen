@@ -1,5 +1,6 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import { getMapData, getUserData } from '../../api'
+import { updateStartVal } from '../../components/TotalUser/logic'
 
 const color = ['rgb(116,166,49)', 'rgb(190,245,99)', 'rgb(202,252,137)', 'rgb(251,253,142)']
 
@@ -15,9 +16,7 @@ function getNowTime() {
     const now = new Date()
     return `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
 }
-
-export const totalUser = ref()
-export const averageAge = ref()
+export const averageAge = ref(null)
 
 const createData = async ({ userData, ageData, deviceData, realTimeOrder }) => {
     userData.value = await getUserData()
@@ -47,7 +46,7 @@ const createData = async ({ userData, ageData, deviceData, realTimeOrder }) => {
         date: [...realTimeOrder.value.date, getNowTime()],
         data: [...realTimeOrder.value.data, userData.value.realTimeOrder]
     }
-    totalUser.value.updateStartVal()
+    updateStartVal.value()
     averageAge.value.update()
 }
 
