@@ -38,9 +38,10 @@ import TopHeader from '../../components/TopHeader/index.vue'
 import Separator from '../../components/Separator/index.vue'
 import TotalUser from '../../components/TotalUser/index.vue'
 import AverageAge from '../../components/AverageAge/index.vue'
-import { userData, ageData } from './useScreenData.js'
+import { totalUser, averageAge, useScreenData } from './useScreenData.js'
 
 const loading = ref(true)
+const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData({once: false})
 
 setTimeout(() => {
   loading.value = false

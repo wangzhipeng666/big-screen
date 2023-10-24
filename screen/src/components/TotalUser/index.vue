@@ -4,7 +4,7 @@
     <div class="sub-title">User Total Count</div>
     <div class="total">
       <count-to
-        :start-val="0"
+        :start-val="startVal"
         :end-val="todayUser"
         :duration="1000"
         separator=","
@@ -15,7 +15,7 @@
         <span class="percent-text-1">
           每日增长率:
           <count-to
-            :start-val="0"
+            :start-val="startPercent"
             :end-val="growthLastDay"
             :duration="1000"
             :decimals="2"
@@ -25,7 +25,7 @@
       <span class="percent-text-2">
         每月增长率:
         <count-to
-          :start-val="0"
+          :start-val="startPercent2"
           :end-val="growthLastMonth"
           :duration="1000"
           :decimals="2"
@@ -42,6 +42,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 const props = defineProps({
   todayUser: {
     type: Number,
@@ -56,6 +57,15 @@ const props = defineProps({
     default: 0
   }
 })
+
+const startVal = ref(0)
+const startPercent = ref(0)
+const startPercent2 = ref(0)
+const updateStartVal = () => {
+  startVal.value = props.todayUser
+  startPercent.value = props.growthLastDay
+  startPercent2.value = props.growthLastMonth
+}
 </script>
 
 <style lang="scss" scoped>

@@ -43,7 +43,6 @@ import * as echarts from 'echarts'
 const color = ['rgb(116,166,49)', 'rgb(190,245,99)', 'rgb(202,252,137)', 'rgb(251,253,142)']
 
 const props = defineProps(['data', 'avgAge'])
-
 let chart
 
 const update = () => {
