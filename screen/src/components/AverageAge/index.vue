@@ -7,13 +7,12 @@
         </div>
         <div class="right">
             <div class="age">
-            <!-- <count-to
-                :startVal="startAge"
+            <count-to
+                :startVal="0"
                 :endVal="avgAge"
                 :duration="1000"
                 :decimals="2"
-            /> -->
-            {{ avgAge }}
+            />
             <span class="age-unit">岁</span>
             </div>
         </div>
@@ -22,12 +21,11 @@
         <div class="average-data-wrapper">
             <div class="average-data" v-for="(item, index) in data" :key="index">
                 <div class="average-data-value">
-                <!-- <count-to
+                <count-to
                     :startVal="item.startValue"
                     :endVal="item.value"
                     :duration="1000"
-                /> -->
-                {{ item.value }}
+                />
                 </div>
                 <div class="average-data-axis">
                 <div class="point" :style="{background: item.color}" />

@@ -3,37 +3,34 @@
     <div class="title">用户总数</div>
     <div class="sub-title">User Total Count</div>
     <div class="total">
-      <!-- <count-to
-        :start-val="startVal"
+      <count-to
+        :start-val="0"
         :end-val="todayUser"
         :duration="1000"
         separator=","
         autoplay
-      /> -->
-      {{ todayUser }}
+      />
     </div>
     <div class="percent-text">
         <span class="percent-text-1">
           每日增长率:
-          <!-- <count-to
-            :start-val="startPercent"
+          <count-to
+            :start-val="0"
             :end-val="growthLastDay"
             :duration="1000"
             :decimals="2"
             suffix="%"
-          /> -->
-          {{ growthLastDay }}
+          />
         </span>
       <span class="percent-text-2">
         每月增长率:
-        <!-- <count-to
-          :start-val="startPercent2"
+        <count-to
+          :start-val="0"
           :end-val="growthLastMonth"
           :duration="1000"
           :decimals="2"
           suffix="%"
-        /> -->
-        {{ growthLastMonth }}
+        />
         </span>
     </div>
     <div class="percent">
