@@ -37,6 +37,11 @@
             <bar-chart :category-data="userData.category" />
           </div>
         </div>
+        <div class="right">
+          <div class="right-top1">
+            <center-header :top-data="userData" />
+          </div>
+        </div>
       </div>
     </container>
   </div>
@@ -52,7 +57,8 @@ import AverageAge from "../../components/AverageAge/index.vue";
 import TotalDevice from '../../components/TotalDevice/index.vue';
 import TotalGender from '../../components/TotalGender/index.vue';
 import LineChart from '../../components/LineChart/index.vue';
-import BarChart from '../../components/BarChart/index.vue'
+import BarChart from '../../components/BarChart/index.vue';
+import CenterHeader from '../../components/CenterHeader/index.vue'
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);
@@ -128,6 +134,86 @@ setTimeout(() => {
           height: 360px;
         }
       }
+      .right {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          margin: 0 10px;
+          max-width: 2960px;
+          overflow: hidden;
+
+          .right-top1 {
+            height: 206px;
+            margin-bottom: 20px;
+          }
+
+          .right-top2 {
+            height: 48px;
+            margin-bottom: 20px;
+          }
+
+          .right-bottom {
+            flex: 1;
+            display: flex;
+
+            .right-left {
+              display: flex;
+              flex-direction: column;
+              width: 1917px;
+
+              .right-left1 {
+                height: 999px;
+              }
+
+              .right-left2 {
+                height: 80px;
+                padding-top: 20px;
+                box-sizing: border-box;
+              }
+
+              .right-left3 {
+                height: 350px;
+                margin-top: 10px;
+
+                .dv-border-box-8 {
+                  width: 100%;
+                  height: 100%;
+                  padding: 5px;
+                  box-sizing: border-box;
+                  background: rgb(66, 68, 70);
+                  border-radius: 10px;
+                  box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+                }
+              }
+
+              .right-left4 {
+                height: 220px;
+                margin-top: 10px;
+              }
+            }
+
+            .right-right {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              margin-left: 10px;
+
+              .right-right1 {
+                width: 100%;
+                height: 999px;
+                padding-right: 10px;
+                box-sizing: border-box;
+              }
+
+              .right-right2 {
+                width: 100%;
+                height: 650px;
+                margin-top: 20px;
+              }
+            }
+          }
+        }
     }
   }
 }
