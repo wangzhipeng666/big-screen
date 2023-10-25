@@ -46,6 +46,28 @@
               :category-data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"
             />
           </div>
+          <div class="right-bottom">
+            <div class="right-left">
+              <div class="right-left1">
+                <!-- <earth :map-data="mapData" /> -->
+                <span>111</span>
+              </div>
+              <div class="right-left2">
+                <country-category
+                  :category-data="['订单量', '销售额', '用户数', '退单量']"
+                  :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"
+                />
+              </div>
+              <div class="right-left3">
+                <div class="dv-border-box-8" :color="['rgb(66, 68, 70)', 'rgb(251,253,142)']">
+                  <average-view :order-data="realTimeOrder" />
+                </div>
+              </div>
+              <div class="right-left4">
+                <schedule-view />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </container>
@@ -65,6 +87,8 @@ import LineChart from '../../components/LineChart/index.vue';
 import BarChart from '../../components/BarChart/index.vue';
 import CenterHeader from '../../components/CenterHeader/index.vue';
 import CountryCategory from '../../components/CountryCategory/index.vue';
+import AverageView from '../../components/AverageView/index.vue';
+import ScheduleView from '../../components/ScheduleView/index.vue'
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);
