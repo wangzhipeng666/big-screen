@@ -57,10 +57,10 @@ const update = () => {
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
-                type: 'shadow'
+                  type: 'shadow'
                 },
                 textStyle: {
-                fontSize: 28
+                  fontSize: 28
                 },
                 padding: 10
             },
@@ -72,8 +72,8 @@ const update = () => {
             },
             dataset: {
                 source: [
-                ['指标', '0-20', '20-30', '30-50', '>50'],
-                data
+                  ['指标', '0-20', '20-30', '30-50', '>50'],
+                  data
                 ]
             },
             xAxis: {
@@ -81,15 +81,15 @@ const update = () => {
                 splitLine: { show: false },
                 max,
                 axisLine: {
-                lineStyle: {
-                    color: 'rgb(50,51,53)',
-                    width: 3
-                }
+                  lineStyle: {
+                      color: 'rgb(50,51,53)',
+                      width: 3
+                  }
                 },
                 axisTick: { show: false },
                 axisLabel: {
-                color: 'rgb(98,105,113)',
-                fontSize: 18
+                  color: 'rgb(98,105,113)',
+                  fontSize: 18
                 }
             },
             yAxis: {
@@ -98,21 +98,21 @@ const update = () => {
             },
             series: [
                 {
-                type: 'bar',
-                stack: 'total',
-                barWidth: 15
+                  type: 'bar',
+                  stack: 'total',
+                  barWidth: 15
                 },
                 {
-                type: 'bar',
-                stack: 'total'
+                  type: 'bar',
+                  stack: 'total'
                 },
                 {
-                type: 'bar',
-                stack: 'total'
+                  type: 'bar',
+                  stack: 'total'
                 },
                 {
-                type: 'bar',
-                stack: 'total'
+                  type: 'bar',
+                  stack: 'total'
                 }
             ]
         }

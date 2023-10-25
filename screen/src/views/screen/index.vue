@@ -24,6 +24,18 @@
               ref="averageAge"
             />
           </div>
+          <div class="left3">
+            <total-device :device-data="deviceData" />
+          </div>
+          <div class="left4">
+            <total-gender :gender-data="userData.gender" />
+          </div>
+          <div class="left5">
+            <line-chart :rider-data="userData.rider" />
+          </div>
+          <div class="left6">
+            <bar-chart :category-data="userData.category" />
+          </div>
         </div>
       </div>
     </container>
@@ -37,6 +49,10 @@ import TopHeader from "../../components/TopHeader/index.vue";
 import Separator from "../../components/Separator/index.vue";
 import TotalUser from "../../components/TotalUser/index.vue";
 import AverageAge from "../../components/AverageAge/index.vue";
+import TotalDevice from '../../components/TotalDevice/index.vue';
+import TotalGender from '../../components/TotalGender/index.vue';
+import LineChart from '../../components/LineChart/index.vue';
+import BarChart from '../../components/BarChart/index.vue'
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);

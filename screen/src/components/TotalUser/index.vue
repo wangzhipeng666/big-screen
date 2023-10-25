@@ -68,7 +68,7 @@ updateStartVal.value = () => {
 .total-user {
   width: 100%;
   height: 100%;
-  background: rgb(66, 68, 70);
+  background: rgb(43, 44, 46);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   padding: 20px 40px;
   box-sizing: border-box;
