@@ -41,6 +41,11 @@
           <div class="right-top1">
             <center-header :top-data="userData" />
           </div>
+          <div class="right-top2">
+            <country-category
+              :category-data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"
+            />
+          </div>
         </div>
       </div>
     </container>
@@ -58,7 +63,8 @@ import TotalDevice from '../../components/TotalDevice/index.vue';
 import TotalGender from '../../components/TotalGender/index.vue';
 import LineChart from '../../components/LineChart/index.vue';
 import BarChart from '../../components/BarChart/index.vue';
-import CenterHeader from '../../components/CenterHeader/index.vue'
+import CenterHeader from '../../components/CenterHeader/index.vue';
+import CountryCategory from '../../components/CountryCategory/index.vue';
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);
