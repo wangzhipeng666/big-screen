@@ -49,8 +49,7 @@
           <div class="right-bottom">
             <div class="right-left">
               <div class="right-left1">
-                <!-- <earth :map-data="mapData" /> -->
-                <span>111</span>
+                <earth :map-data="mapData" />
               </div>
               <div class="right-left2">
                 <country-category
@@ -88,7 +87,8 @@ import BarChart from '../../components/BarChart/index.vue';
 import CenterHeader from '../../components/CenterHeader/index.vue';
 import CountryCategory from '../../components/CountryCategory/index.vue';
 import AverageView from '../../components/AverageView/index.vue';
-import ScheduleView from '../../components/ScheduleView/index.vue'
+import ScheduleView from '../../components/ScheduleView/index.vue';
+import Earth from '../../components/Earth/dataMap.vue';
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);
