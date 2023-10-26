@@ -66,6 +66,14 @@
                 <schedule-view />
               </div>
             </div>
+            <div class="right-right">
+              <div class="right-right1">
+                <plan-list :sale-data="userData.areaSales" />
+              </div>
+              <div class="right-right2">
+                <activate-user :top-data="userData.areaTop" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -89,6 +97,8 @@ import CountryCategory from '../../components/CountryCategory/index.vue';
 import AverageView from '../../components/AverageView/index.vue';
 import ScheduleView from '../../components/ScheduleView/index.vue';
 import Earth from '../../components/Earth/dataMap.vue';
+import PlanList from '../../components/PlanList/index.vue';
+import ActivateUser from '../../components/ActivateUser/index.vue';
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);

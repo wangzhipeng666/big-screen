@@ -44,14 +44,10 @@ const createData = async ({ userData, ageData, deviceData, realTimeOrder }) => {
     }
     realTimeOrder.value = {
         date: [...realTimeOrder.value.date, getNowTime()],
-        data: [...realTimeOrder.value.data, getRandomNum()]
+        data: [...realTimeOrder.value.data, userData.value.realTimeOrder]
     }
     updateStartVal.value()
     averageAge.value.update()
-}
-
-function getRandomNum() {
-    return Math.random() * 1000
 }
 
 const screenReady = ({
