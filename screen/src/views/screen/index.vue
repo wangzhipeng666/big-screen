@@ -102,7 +102,7 @@ import ActivateUser from '../../components/ActivateUser/index.vue';
 import { averageAge, useScreenData } from "./useScreenData.js";
 
 const loading = ref(true);
-const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData({ once: true });
+const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData({ once: false });
 
 setTimeout(() => {
   loading.value = false;
