@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="loading-text" v-if="loading">数据加载中...</div>
+    <Loading v-if="ready">数据加载中...</Loading>
     <container :options="{ width: 3840, height: 2160 }" v-else>
       <div class="header">
         <top-header />
@@ -21,7 +21,6 @@
             <average-age
               :age-data="ageData"
               :avg-age="+userData.averageAge || 0"
-              ref="averageAge"
             />
           </div>
           <div class="left3">
@@ -82,7 +81,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import Loading from "../../components/Loading/index.vue";
 import Container from "../../components/container/index.vue";
 import TopHeader from "../../components/TopHeader/index.vue";
 import Separator from "../../components/Separator/index.vue";
@@ -99,14 +98,9 @@ import ScheduleView from '../../components/ScheduleView/index.vue';
 import Earth from '../../components/Earth/dataMap.vue';
 import PlanList from '../../components/PlanList/index.vue';
 import ActivateUser from '../../components/ActivateUser/index.vue';
-import { averageAge, useScreenData } from "./useScreenData.js";
+import { useScreenData } from "./useScreenData.js";
 
-const loading = ref(true);
 const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData({ once: false });
-
-setTimeout(() => {
-  loading.value = false;
-}, 1000);
 </script>
 
 <style lang="scss" scoped>
