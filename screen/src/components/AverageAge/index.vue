@@ -38,6 +38,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import { updateAge } from './logic'
 import * as echarts from 'echarts'
 
 const color = ['rgb(116,166,49)', 'rgb(190,245,99)', 'rgb(202,252,137)', 'rgb(251,253,142)']
@@ -45,7 +46,7 @@ const color = ['rgb(116,166,49)', 'rgb(190,245,99)', 'rgb(202,252,137)', 'rgb(25
 const props = defineProps(['ageData', 'avgAge'])
 let chart
 
-const update = () => {
+updateAge.value = () => {
     const createOption = () => {
         const data = ['年龄分布']
         let max = 0
@@ -124,10 +125,8 @@ const update = () => {
     chart.setOption(createOption())
 }
 
-defineExpose({update})
-
 onMounted(() => {
-  update()
+  updateAge.value()
 })
 </script>
 

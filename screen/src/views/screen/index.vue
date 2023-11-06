@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Loading v-if="ready">数据加载中...</Loading>
+    <Loading v-if="!ready">数据加载中...</Loading>
     <container :options="{ width: 3840, height: 2160 }" v-else>
       <div class="header">
         <top-header />
